@@ -1,17 +1,25 @@
 body{
-    background: linear-gradient(45deg,blue, pink);
-
+background: rgb(0,255,8);
+background: linear-gradient(29deg, rgba(0,255,8,1) 0%, rgba(215,162,56,1) 52%, rgba(255,101,101,1) 100%);
 }
 
-.nav.navbar-nav li a {
-   color: black!important;
- }
+
+.navbar{
+    justify-content: center!important;
+}
+.container-fluid{
+justify-content: center!important;
+}
+
+.navbar-nav {
+    align-content: center;
+    align-items: center;
+}
+
 a.nav-link
 {
+    justify-content: center!important;
     font-weight: 600!important;
     font-size: 1.4rem;
     color:black!important;
-}
-.nav.navbar-nav a:hover {
- color: indianred!important;
 }
