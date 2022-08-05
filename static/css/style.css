@@ -1,0 +1,17 @@
+body{
+    background: linear-gradient(45deg,blue, pink);
+
+}
+
+.nav.navbar-nav li a {
+   color: black!important;
+ }
+a.nav-link
+{
+    font-weight: 600!important;
+    font-size: 1.4rem;
+    color:black!important;
+}
+.nav.navbar-nav a:hover {
+ color: indianred!important;
+}
