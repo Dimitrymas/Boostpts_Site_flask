@@ -11,7 +11,8 @@ background: linear-gradient(41deg, rgba(14,9,92,1) 4%, rgba(66,7,83,1) 84%);
 justify-content: center!important;
 }
 span {
-    font-size: 0.8rem!important;
+    font-size: 0.9rem!important;
+
 }
 .navbar-nav {
     align-content: center;
@@ -25,9 +26,41 @@ a.nav-link
     font-weight: 715!important;
     font-size: 1.4rem;
     color:snow!important;
+    margin-left: 2rem;
+    right: 2rem;
 }
 
 a.nav-link:hover{
 
     color:dimgray!important;
+}
+.card1{
+    transition: background 0.5s ease!important;
+}
+.card1:hover {
+  transition: background 0.5s ease!important;
+  background:#00ffb6;
+  border:1px solid #00ffb6;
+}
+
+.card1:hover .list-group-item{
+  background:#00ffb6 !important
+}
+select.form-control:focus-within{
+    transition: background 0.5s ease!important;
+    background:#00ffb6!important;
+}
+.form-control{
+    transition: background 0.5s ease!important;
+}
+div.form-group{
+    text-align: center;
+}
+label{
+    background:snow!important;
+
+     border-radius: 2px!important;
+
+      margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
 }

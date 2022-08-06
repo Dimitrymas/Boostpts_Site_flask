@@ -1,0 +1,84 @@
+{%extends 'base.html'%}
+{% block content %}
+    <div class="container-fluid" xmlns="http://www.w3.org/1999/html">
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card card1 h-100">
+            <div class="card-body">
+
+              <h5 class="card-title">Start</h5>
+              <small class='text-muted'>From 1 to 5 divisions</small>
+              <br><br>
+              <span class="h2">179 Рублей</span>
+              <br><br>
+              <div class="d-grid my-3">
+                  <form method="post" action="/buy">
+                      <button class="btn btn-outline-dark btn-block" type="submit" value="VALUE1" name="action1" />Select</button>
+                  </form>
+              </div>
+              <ul>
+                <li>Only pro boosters</li>
+                <li>Fast boost</li>
+                <li>1-2 days</li>
+
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card card1 h-100">
+            <div class="card-body">
+
+              <h5 class="card-title">Standard</h5>
+              <small class='text-muted'>From 5 to 7 divisions</small>
+              <br><br>
+              <span class="h2">279 Рублей</span>
+              <br><br>
+              <div class="d-grid my-3">
+                  <form method="post" action="/buy">
+                      <button class="btn btn-outline-dark btn-block" type="submit" value="VALUE2" name="action2" />Select</button>
+                  </form>
+              </div>
+              <ul>
+                <li>Best boosters</li>
+                <li>Priority order</li>
+                <li>2-3 Days</li>
+
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card card1 h-100">
+            <div class="card-body">
+
+              <h5 class="card-title">Pro</h5>
+              <small class='text-muted'>From 7 to 9 divisions</small>
+              <br><br>
+              <span class="h2">579 Рублей</span>
+              <br><br>
+              <div class="d-grid my-3">
+                <form method="post" action="/buy">
+                    <button class="btn btn-outline-dark btn-block" type="submit" value="VALUE3" name="action3">Select</button>
+                </form>
+              </div>
+              <ul>
+                <li>The bestest boosters</li>
+                <li>Max Priority order</li>
+                <li>1-2 Days</li>
+
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
