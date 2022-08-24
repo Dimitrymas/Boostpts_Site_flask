@@ -1,14 +1,13 @@
-body{
-background: rgb(14,9,92);
-background: linear-gradient(41deg, rgba(14,9,92,1) 4%, rgba(66,7,83,1) 84%);
-}
+body {
 
+    background: linear-gradient(41deg, rgba(14, 9, 92, 1) 4%, rgba(66, 7, 83, 1) 84%);
+}
 
 .navbar{
     justify-content: center!important;
 }
 .container-fluid{
-justify-content: center!important;
+    justify-content: center!important;
 }
 span {
     font-size: 0.9rem!important;
@@ -18,6 +17,8 @@ span {
     align-content: center;
     align-items: center;
 }
+
+
 
 a.nav-link
 {
@@ -55,12 +56,29 @@ select.form-control:focus-within{
 }
 div.form-group{
     text-align: center;
+    width: 100%!important;
 }
 label{
-    background:snow!important;
 
-     border-radius: 2px!important;
-
-      margin-bottom: 0.4rem;
+    border-radius: 2px!important;
+    margin-bottom: 0.4rem;
     margin-top: 0.4rem;
+}
+.div-background_image{
+    background-image:url('/sweater/staticr/static/fortnite_label_min.jpg');
+    background-repeat:no-repeat;
+    background-position:center;
+    height: 16rem;
+    margin-bottom: 0.3rem!important;
+}
+html{
+    background: none!important;
+}
+.li-footer{
+    margin-left: 0.4rem;
+}
+.div-background_image > h1 {
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.5rem;
 }

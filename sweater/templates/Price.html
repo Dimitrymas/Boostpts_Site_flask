@@ -13,7 +13,8 @@
               <span class="h2">179 Рублей</span>
               <br><br>
               <div class="d-grid my-3">
-                  <form method="post" action="/buy">
+                  <form method="post" action="/price">
+                      <input name="serv_type" value="1to5" hidden class="hidden">
                       <button class="btn btn-outline-dark btn-block" type="submit" value="VALUE1" name="action1" />Select</button>
                   </form>
               </div>
@@ -38,8 +39,9 @@
               <span class="h2">279 Рублей</span>
               <br><br>
               <div class="d-grid my-3">
-                  <form method="post" action="/buy">
-                      <button class="btn btn-outline-dark btn-block" type="submit" value="VALUE2" name="action2" />Select</button>
+                  <form method="post">
+                      <input name="serv_type" value="5to7" hidden class="hidden">
+                      <button class="btn btn-outline-dark btn-block" type="submit" name="action2" />Select</button>
                   </form>
               </div>
               <ul>
@@ -63,7 +65,8 @@
               <span class="h2">579 Рублей</span>
               <br><br>
               <div class="d-grid my-3">
-                <form method="post" action="/buy">
+                <form method="post" action="/price">
+                    <input name="serv_type" value="7to9" hidden class="hidden">
                     <button class="btn btn-outline-dark btn-block" type="submit" value="VALUE3" name="action3">Select</button>
                 </form>
               </div>
