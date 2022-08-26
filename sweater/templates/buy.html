@@ -1,33 +1,33 @@
 {%extends 'base.html'%}
 {% block content %}
-<div class="card container div-background_image d-flex justify-content-end">
-    <h1 style="color: white" class=""><i>Fortnite Boosting Services</i></h1>
-</div>
-<form method="post" action="/sweater/static">
-    <div style="align-items: center; background: aliceblue; padding-bottom: 10px" class="card container">
-        <div class="form-group">
-            <label for='tovar'>Select Your Desired Options</label>
-            <select class="form-control" id="tovar" name="tovar">
-              <option>{{ first }}</option>
-              <option>{{ second }}</option>
-              <option>{{ third }}</option>
-            </select>
-          </div>
-        <div class="form-group">
-            <label for='msg'>Select messanger</label>
-            <select class="form-control" id="msg" name="msg">
-              <option>Vk</option>
-              <option>Discord</option>
-              <option>Telegram</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Enter link or id(for Diskord and Telegram)</label>
-            <input required type="text" class="form-control" id="link" placeholder="Enter link" name="link">
-        </div>
-        <br>
-        <button type="submit" class="btn btn-success w-100">Buy boost</button>
+    <div class="card container div-background_image d-flex justify-content-end">
+        <h1 style="color: white" class=""><i>Fortnite Boosting Services</i></h1>
     </div>
-</form>
+    <form method="POST">
+        <div style="align-items: center; background: aliceblue; padding-bottom: 10px" class="card container">
+            <div class="form-group">
+                <label for='tovar'>Select Your Desired Options</label>
+                <select required class="form-control" id="tovar" name="tovar">
+                  <option>{{ first }}</option>
+                  <option>{{ second }}</option>
+                  <option>{{ third }}</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label for='msg'>Select messanger</label>
+                <select required class="form-control" id="msg" name="msg">
+                  <option>Vk</option>
+                  <option>Discord</option>
+                  <option>Telegram</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Enter link or id(for Diskord and Telegram)</label>
+                <input required type="text" class="form-control" id="link" placeholder="Enter link" name="link">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success w-100">Buy boost</button>
+        </div>
+    </form>
 
 {% endblock %}

@@ -55,7 +55,7 @@ select.form-control:focus-within{
     transition: background 0.5s ease!important;
 }
 div.form-group{
-    text-align: center;
+
     width: 100%!important;
 }
 label{
@@ -65,7 +65,7 @@ label{
     margin-top: 0.4rem;
 }
 .div-background_image{
-    background-image:url('/sweater/staticr/static/fortnite_label_min.jpg');
+    background-image:url('/static/fortnite_label_min.jpg');
     background-repeat:no-repeat;
     background-position:center;
     height: 16rem;
@@ -81,4 +81,8 @@ html{
     font-weight: 900;
     line-height: 1;
     margin-bottom: 0.5rem;
+}
+
+.black-order-text{
+    color:black!important;
 }

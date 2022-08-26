@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container mt-5 card" style="background-color: white">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-12">
+            <div class="rounded">
+                <div class="table-responsive table-borderless">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Username</th>
+                                <th>status</th>
+                                <th>Type</th>
+                                <th>Messager</th>
+                                <th>Link</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            {% for order in all_orders %}
+                            <tr class="cell-1">
+                                <td>{{ order.id }}</td>
+                                <td>{{ order.username }}</td>
+                                <td><span class="badge badge-success black-order-text">{{ order.active }}</span></td>
+                                <td>{{ order.type }}</td>
+                                <td>{{ order.messager }}</td>
+                                <td>{{ order.link }}</td>
+                                {% if order.executor == None %}
+                                <td><a class="btn btn-danger" href=takeconfirmorder{{ order.id }}>Take order</a></td>
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

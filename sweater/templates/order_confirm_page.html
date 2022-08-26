@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{% block content %}
+<div style="background-color: white" class="container card">
+    <div class="container mt-5 card" style="background-color: white">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            <div class="rounded">
+                <div class="table-responsive table-borderless">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Username</th>
+                                <th>status</th>
+                                <th>Type</th>
+                                <th>Messager</th>
+                                <th>Link</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            <tr class="cell-1">
+                                <td>{{ order.id }}</td>
+                                <td>{{ order.username }}</td>
+                                <td><span class="badge badge-success black-order-text">{{ order.active }}</span></td>
+                                <td>{{ order.type }}</td>
+                                <td>{{ order.messager }}</td>
+                                <td>{{ order.link }}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-center">
+                        <form method="POST">
+                            <input hidden name="take_order" value={{ order.id }}}></input>
+                            <button class="btn btn-danger">Confirm</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

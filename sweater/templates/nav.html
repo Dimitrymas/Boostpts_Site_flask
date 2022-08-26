@@ -6,14 +6,42 @@
         </button>
          <div class="justify-content-center collapse navbar-collapse" id="navbarText">
             <ul class="mx-auto navbar-nav">
-                <a class="nav-link center d-none d-lg-block" href="/sweater/static">Home</a>
+                <a class="nav-link center d-none d-lg-block" href="/">Home</a>
                 <li class="nav-item">
                     <a class="nav-link" href="/price">Price</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/buy">Buy Boost</a>
                 </li>
+                {% if current_user.is_authenticated and current_user.role =="ADMIN" %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Admin-Tools</a>
+                    </li>
+                {% endif %}
+                {% if (current_user.is_authenticated and current_user.role =="ADMIN") or (current_user.is_authenticated and current_user.role =="BOOSTER")%}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/orders/all">Orders</a>
+                    </li>
+                {% endif %}
+                {% if not current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/register">Registration</a>
+                    </li>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/myprofile">My profile</a>
+                    </li>
+                {% endif %}
             </ul>
          </div>
     </div>
+
+
+
+    <h5 style="color: white">{{ username }}</h5>
 </nav>
