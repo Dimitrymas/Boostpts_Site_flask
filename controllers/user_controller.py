@@ -42,7 +42,7 @@ class UserPage:
             except:
 
                 flash(f'The {login} already taken')
-            send_confirm_email(email, email_token)
+            send_confirm_email(email, email_token, "confirm")
             print("s",email_token)
             return redirect(url_for('user_bp.login_page'))
 
@@ -92,8 +92,41 @@ class UserPage:
         user = User.query.filter_by(email_token=email_token).first()
         print(user)
         user.active = True
+        user.email_token = None
         db.session.commit()
+
         return redirect("/user/login")
+
+    def repass_page():
+        return render_template("repass_email.html")
+
+    def repass():
+        email = request.form.get("email")
+        if not email:
+            flash("Please fill form")
+
+        user = User.query.filter_by(email=email).first()
+        if user:
+            email_token = generate_password_hash(email)
+            user.email_token = email_token
+            db.session.commit
+
+            send_confirm_email(email, email_token, "repass")
+
+
+
+    def repass_token_page(email_token):
+        return render_template("repass_password")
+
+    def repass_token(email_token):
+        password = request.form.get("password")
+        user = User.query.filter_by(email_token=email_token).first()
+        user.password = password
+        user.email_token = None
+        db.session.commit
+        return redirect("/user/login")
+
+
     @login_required
     def logout():
         logout_user()

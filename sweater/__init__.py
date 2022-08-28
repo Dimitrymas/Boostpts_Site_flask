@@ -4,7 +4,7 @@ from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, template_folder='templates')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:41567@localhost/pts'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://Boostpts:LkSd!TM5Yn3!FM3@Boostpts.mysql.pythonanywhere-services.com/pts'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SECRET_KEY'] = "PTSM@RKET"
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
