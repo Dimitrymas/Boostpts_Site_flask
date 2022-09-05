@@ -2,20 +2,22 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
+from config_with_keys import *
 
 app = Flask(__name__, template_folder='templates')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://Boostpts:LkSd!TM5Yn3!FM3@Boostpts.mysql.pythonanywhere-services.com/pts'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-app.config['SECRET_KEY'] = "PTSM@RKET"
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'fortnite.pts.market@gmail.com'
-app.config['MAIL_PASSWORD'] = 'nhutrctrqhnirody'
-app.config['MAIL_DEFAULT_SENDER'] = 'fortnite.pts.market@gmail.com'
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
+app.config['SECRET_KEY'] = SECRET_KEY
+app.config['MAIL_SERVER'] = MAIL_SERVER
+app.config['MAIL_PORT'] = MAIL_PORT
+app.config['MAIL_USERNAME'] = MAIL_USERNAME
+app.config['MAIL_PASSWORD'] = MAIL_PASSWORD
+app.config['MAIL_DEFAULT_SENDER'] = MAIL_DEFAULT_SENDER
+app.config['MAIL_USE_TLS'] = MAIL_USE_TLS
+app.config['MAIL_USE_SSL'] = MAIL_USE_SSL
+app.secret_key = APP_SECRET_KEY
 db = SQLAlchemy(app)
 mail = Mail(app)
 login_manager = LoginManager(app)
-app.secret_key = 'PTSMARKET'
+
 

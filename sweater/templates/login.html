@@ -1,53 +1,57 @@
 {%extends 'base.html'%}
 {% block content %}
 
-  <section class="vh-100 bg-image">
+<section class="vh-100 bg-image">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-      <div class="container h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-            <div class="card" style="border-radius: 15px;">
-              <div class="card-body p-5">
-                <h2 class="text-uppercase text-center mb-5">Login to your account</h2>
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Login to your account</h2>
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            {% for message in messages %}
                             <h4 style="text-align: center">-{{ message }}-</h4>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-                <form method="POST">
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+                            <form method="POST">
 
-                  <div class="form-outline mb-4">
-                    <input type="text" id="login" name="login" class="form-control form-control-lg" />
-                    <label class="form-label" for="login">Your Name</label>
-                  </div>
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="login" name="login" class="form-control form-control-lg"/>
+                                    <label class="form-label" for="login">Your Name</label>
+                                </div>
 
-                  <div class="form-outline mb-4">
-                    <input type="password" id="password" name="password" class="form-control form-control-lg" />
-                    <label class="form-label" for="password">Password</label>
-                  </div>
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="password" name="password"
+                                           class="form-control form-control-lg"/>
+                                    <label class="form-label" for="password">Password</label>
+                                </div>
 
-                  <div class="d-flex justify-content-center">
-                    <button type="submit"
-                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
-                  </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login
+                                    </button>
+                                </div>
 
-                  <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="/user/register"
-                      class="fw-bold text-body"><u>SingUp here</u></a>
-                  </p>
-                  <p class="text-center text-muted mt-5 mb-0">Forgot your password? <a href="/user/repass"
-                      class="fw-bold text-body"><u>Recover password</u></a>
-                  </p>
+                                <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a
+                                        href="/user/register"
+                                        class="fw-bold text-body"><u>SingUp here</u></a>
+                                </p>
+                                <p class="text-center text-muted mt-5 mb-0">Forgot your password? <a href="/user/repass"
+                                                                                                     class="fw-bold text-body"><u>Recover
+                                    password</u></a>
+                                </p>
 
 
-                </form>
+                            </form>
 
-              </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
 {% endblock %}

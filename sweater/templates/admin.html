@@ -1,20 +1,21 @@
 {%extends 'base.html'%}
 {% block content %}
-    <div style="height: 40%"></div>
-    <div class="justify-content-around d-flex container">
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div style="height: 40%"></div>
+<div class="justify-content-around d-flex container">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
             Change roles
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="changerole?role=USER">Change role users</a>
-              <a class="dropdown-item" href="changerole?role=BOOSTER">Change role boosters</a>
-              <a class="dropdown-item" href="changerole?role=ADMIN">Change role admins</a>
-              <a class="dropdown-item" href="changerole">Change role all</a>
-          </div>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="changerole?role=USER">Change role users</a>
+            <a class="dropdown-item" href="changerole?role=BOOSTER">Change role boosters</a>
+            <a class="dropdown-item" href="changerole?role=ADMIN">Change role admins</a>
+            <a class="dropdown-item" href="changerole">Change role all</a>
         </div>
-        <a class="col-md-3 btn btn-primary" href="/admin/changerole">Change role</a>
-        <a class="col-md-3 btn btn-primary" href="/admin/changerole">Change role</a>
     </div>
+    <a class="col-md-3 btn btn-primary" href="/admin/changerole">Change role</a>
+    <a class="col-md-3 btn btn-primary" href="/admin/changerole">Change role</a>
+</div>
 
 {% endblock %}

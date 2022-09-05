@@ -5,17 +5,17 @@ from flask import redirect
 
 
 def checkRole(*role):
-
     def wrapper(view_function):
         @wraps(view_function)
         def decorator(*args, **kwargs):
-            if not(current_user.is_authenticated and current_user.role in role):
+            if not (current_user.is_authenticated and current_user.role in role):
                 return redirect("/")
             return view_function(*args, **kwargs)
 
         return decorator
 
     return wrapper
+
 
 def checkBoosterRole():
     if current_user.is_authenticated:
@@ -26,6 +26,7 @@ def checkBoosterRole():
     else:
         return redirect("/")
 
+
 def check(function_to_decorate):
     def wrapper(self, *args, **kwargs):
         if current_user.is_authenticated:
@@ -35,6 +36,5 @@ def check(function_to_decorate):
                 function_to_decorate(self, *args, **kwargs)
         else:
             return redirect("/")
-
 
     return wrapper

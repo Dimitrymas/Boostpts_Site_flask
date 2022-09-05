@@ -1,0 +1,11 @@
+SQLALCHEMY_DATABASE_URI = 'mysql://root:41567@localhost/pts'
+SQLALCHEMY_TRACK_MODIFICATIONS = True
+SECRET_KEY = "PTSM@RKET"
+MAIL_SERVER = 'smtp.gmail.com'
+MAIL_PORT = 465
+MAIL_USERNAME = 'fortnite.pts.market@gmail.com'
+MAIL_PASSWORD = 'nhutrctrqhnirody'
+MAIL_DEFAULT_SENDER = 'fortnite.pts.market@gmail.com'
+MAIL_USE_TLS = False
+MAIL_USE_SSL = True
+APP_SECRET_KEY = 'PTSMARKET'

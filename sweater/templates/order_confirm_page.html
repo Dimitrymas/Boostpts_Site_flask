@@ -2,12 +2,12 @@
 {% block content %}
 <div style="background-color: white" class="container card">
     <div class="container mt-5 card" style="background-color: white">
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-10">
-            <div class="rounded">
-                <div class="table-responsive table-borderless">
-                    <table class="table">
-                        <thead>
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+                <div class="rounded">
+                    <div class="table-responsive table-borderless">
+                        <table class="table">
+                            <thead>
                             <tr>
                                 <th>Order #</th>
                                 <th>Username</th>
@@ -17,8 +17,8 @@
                                 <th>Link</th>
                                 <th></th>
                             </tr>
-                        </thead>
-                        <tbody class="table-body">
+                            </thead>
+                            <tbody class="table-body">
                             <tr class="cell-1">
                                 <td>{{ order.id }}</td>
                                 <td>{{ order.username }}</td>
@@ -28,19 +28,19 @@
                                 <td>{{ order.link }}</td>
 
                             </tr>
-                        </tbody>
-                    </table>
-                    <div class="d-flex justify-content-center">
-                        <form method="POST">
-                            <input hidden name="take_order" value={{ order.id }}}></input>
-                            <button class="btn btn-danger">Confirm</button>
-                        </form>
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-center">
+                            <form method="POST">
+                                <input hidden name="take_order" value={{ order.id }}}></input>
+                                <button class="btn btn-danger">Confirm</button>
+                            </form>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 {% endblock %}

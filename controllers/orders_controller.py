@@ -4,6 +4,7 @@ from midllewares.checkRole import checkRole
 from models.model import Orders
 from sweater import db
 
+
 class OrderPage:
     @checkRole('BOOSTER', 'ADMIN')
     def orders_page():
@@ -31,8 +32,3 @@ class OrderPage:
             order.executor = current_user.username
             db.session.commit()
             return redirect('/orders/all')
-
-
-
-
-

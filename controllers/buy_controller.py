@@ -6,6 +6,7 @@ from sweater import db
 types = ['1to5', '5to7', '7to9']
 type_names = []
 
+
 class BuyPage:
     @login_required
     def Buy():
@@ -20,16 +21,13 @@ class BuyPage:
         messager = request.form.get('msg')
         link = request.form.get('link')
         username = current_user.username
-        print(type, messager,username,link)
+        print(type, messager, username, link)
         order = Orders(type=type, messager=messager, link=link, username=username)
         try:
             db.session.add(order)
             db.session.commit()
         finally:
             return redirect('/')
-
-
-
 
     def check_type(request):
         type = request.args.get('type')

@@ -1,89 +1,122 @@
 {%extends 'base.html'%}
 {% block content %}
-      <div style="padding: 0" class="d-flex container card">
-          <section class="" style="background-color: #eee;">
+<form method="post">
+    <div style="padding: 0" class="d-flex container card">
+        <section class="" style="background-color: #eee;">
             <div class="container py-5">
-              <div class="row">
-                <div class="col">
-                  <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-                    <ol class="breadcrumb mb-0">
-                      <li class="breadcrumb-item"><a href="#">Home</a></li>
-                      <li class="breadcrumb-item"><a href="#">User</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="card mb-4">
-                    <div class="card-body text-center">
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                        class="rounded-circle img-fluid" style="width: 150px;">
-                      <h5 class="my-3">{{ user.username }}</h5>
+                <div class="row">
+                    <div class="col">
+                        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">User</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                            </ol>
+                        </nav>
                     </div>
-                  </div>
                 </div>
-                <div class="col-lg-8">
-                  <div class="card mb-4">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <p class="mb-0">Full Name</p>
-                        </div>
-                        <div class="col-sm-9">
-                          <p class="text-muted mb-0">{{ user.name }}</p>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <p class="mb-0">Email</p>
-                        </div>
-                        <div class="col-sm-9">
-                          <p class="text-muted mb-0">{{ user.email }}</p>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <p class="mb-0">Phone</p>
-                        </div>
-                        <div class="col-sm-9">
-                          <p class="text-muted mb-0">(097) 234-5678</p>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <p class="mb-0">Mobile</p>
-                        </div>
-                        <div class="col-sm-9">
-                          <p class="text-muted mb-0">(098) 765-4321</p>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <p class="mb-0">Address</p>
-                        </div>
-                        <div class="col-sm-9">
-                          <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-                    {% if orders|length != 0%}
-                        <div style="background-color: white" class="container card">
-                            <div class="container mt-5 card" style="margin-top: 10px!important; margin-bottom: 10px; background-color: white">
-                                <div class="d-flex justify-content-center row">
-                                    <div class="col-md-12">
-                                        <div class="rounded">
-                                            <div class="table-responsive table-borderless">
-                                                <table class="table">
-                                                    <thead>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <img src=/static/avatars/{{ current_user.id }}.png alt=""
+                                     class="img-fluid" style="width: 150px; border-radius: 18px;">
+                                <h5 class="my-3">{{ user.username }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <p class="mb-0">Full Name</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <p class="text-muted mb-0">{{ user.name }}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <p class="mb-0">Email</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <p class="text-muted mb-0">{{ user.email }}</p>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p class="mb-0">Messanger</p>
+                                        </div>
+
+                                        <div class="form-inline col-9" style="display: flex!important;">
+                                            <div class="col-12" style="display: flex; justify-content: space-between">
+
+                                                {% set opt1 = "" %}
+                                                {% set opt2 = "" %}
+                                                {% set opt3 = "" %}
+                                                {% if user.messanger == "value2" %}
+                                                {% set opt2 = "selected" %}
+                                                {% endif %}
+                                                {% if user.messanger == "value3" %}
+                                                {% set opt3 = "selected" %}
+                                                {% endif %}
+
+
+                                                <select class="mb-3  mr-1 form-select" name="select_messanger">
+                                                    <option value="value1" {{ opt1 }}>VK</option>
+                                                    <option value="value2" {{ opt2 }}>Telegram</option>
+                                                    <option value="value3" {{ opt3 }}>Discord</option>
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p class="mb-0">Link</p>
+                                        </div>
+                                        <div class="form-inline col-9" style="display: flex!important; ">
+                                            <div class="col-12" style="display: flex; justify-content: space-between">
+
+
+                                                <input name="input_link" type="text" class="mb-3 mr-1 form-control"
+                                                       value="{{ user.link }}">
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Address</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% if orders|length != 0%}
+                            <div style="background-color: white" class="container card">
+                                <div class="container mt-5 card"
+                                     style="margin-top: 10px!important; margin-bottom: 10px; background-color: white">
+                                    <div class="d-flex justify-content-center row">
+                                        <div class="col-md-12">
+                                            <div class="rounded">
+                                                <div class="table-responsive table-borderless">
+                                                    <table class="table">
+                                                        <thead>
                                                         <tr>
                                                             <th>Order #</th>
                                                             <th>Username</th>
@@ -94,42 +127,46 @@
                                                             <th>Executor</th>
                                                             <th></th>
                                                         </tr>
-                                                    </thead>
-                                                    <tbody class="table-body">
+                                                        </thead>
+                                                        <tbody class="table-body">
 
                                                         {% for order in orders %}
 
-                                                            <tr class="cell-1">
-                                                                <td>{{ order.id }}</td>
-                                                                <td>{{ order.username }}</td>
-                                                                <td><span class="badge badge-success black-order-text">{{ order.active }}</span></td>
-                                                                <td>{{ order.type }}</td>
-                                                                <td>{{ order.messager }}</td>
-                                                                <td>{{ order.link }}</td>
-                                                                <td>{{ order.executor }}</td>
-                                                            </tr>
+                                                        <tr class="cell-1">
+                                                            <td>{{ order.id }}</td>
+                                                            <td>{{ order.username }}</td>
+                                                            <td><span class="badge badge-success black-order-text">{{ order.active }}</span>
+                                                            </td>
+                                                            <td>{{ order.type }}</td>
+                                                            <td>{{ order.messager }}</td>
+                                                            <td>{{ order.link }}</td>
+                                                            <td>{{ order.executor }}</td>
+                                                        </tr>
                                                         {% endfor %}
 
 
-                                                    </tbody>
-                                                </table>
+                                                        </tbody>
+                                                    </table>
 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    {% endif %}
-                         <div class="d-flex" style="justify-content: flex-end;">
-                            <a href="/user/logout" style="margin-top: 5px" class="btn btn-danger">Logout</a>
-                         </div>
+                            {% endif %}
+                            <div class="d-flex" style="justify-content: space-between;">
+                                <button style="margin-top: 5px" class="mb-1 ml-2 btn btn-primary" type="submit">
+                                    Confirm
+                                </button>
+                                <a href="/user/logout" style="margin-top: 5px"
+                                   class="mb-1 mr-2 btn btn-danger">Logout</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-          </section>
-        </div>
-
-
+        </section>
+    </div>
+</form>
 
 {% endblock %}

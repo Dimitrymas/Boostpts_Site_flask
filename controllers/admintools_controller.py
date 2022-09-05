@@ -38,5 +38,3 @@ class AdminPage:
             db.session.commit()
 
         return redirect(url_for('admin_bp.change_role_page'))
-
-

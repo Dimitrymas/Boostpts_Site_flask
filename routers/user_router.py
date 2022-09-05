@@ -10,7 +10,8 @@ user_bp.route('/login', methods=['GET', 'POST'])(UserPage.login_page)
 
 user_bp.route('/logout', methods=['GET', 'POST'])(UserPage.logout)
 
-user_bp.route('/myprofile', methods=['GET', 'POST'])(UserPage.profile)
+user_bp.route('/myprofile', methods=['GET'])(UserPage.profile_page)
+user_bp.route('/myprofile', methods=['POST'])(UserPage.profile)
 
 user_bp.route('/confirm/<email_token>', methods=['GET'])(UserPage.email_confirm)
 
